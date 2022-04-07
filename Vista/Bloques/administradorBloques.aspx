@@ -44,7 +44,7 @@
 	    <div style="margin-left:75px; margin-right:auto">
 		<asp:TextBox ID="TextBox1" runat="server" BorderStyle="Inset" Width="995px">Matricula</asp:TextBox>
 			<asp:Button ID="Button1" runat="server" Text="Buscar" />
-            
+            <asp:Button ID="Button3" runat="server" Text="Button" />
         </div>
 
 		<div>
@@ -59,10 +59,14 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#33276A" />
         </asp:GridView>
+
 		</div>
 	  
-		<div style="margin-left:75px"><!--Apartado de altas -->
-			<textarea id="Altas" rows="2" style= "width:55%"></textarea>
+		<div style="margin-left:75px"><!--Apartado de altas  La idea es manejar cuantos textbox se necesiten para llenar un registro en la base de datos, y el boton se encarga de mandar la info a la base de datos-->
+			<asp:TextBox ID="ID" runat="server" Width="410px"></asp:TextBox>
+			<asp:TextBox ID="TextBox2" runat="server" Width="410px"></asp:TextBox>
+			<asp:TextBox ID="TextBox3" runat="server" Width="410px"></asp:TextBox>
+			<asp:Button ID="Button4" runat="server" Text="Alta" />
 		</div>
 
 		<div style="margin-left:75px"><!--Apartado de modificaciones -->
