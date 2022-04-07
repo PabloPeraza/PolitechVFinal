@@ -324,6 +324,7 @@
     <Content Include="Vista\Mosaico\index_Mosaico.aspx" />
     <Content Include="Vista\Mosaico\log-in_Mosaico.aspx" />
     <Content Include="Vista\Mosaico\mas_Info.aspx" />
+    <Content Include="Vista\Pantalla_Dividida\AdminPantallaDividida.aspx" />
     <Content Include="Vista\Pantalla_Dividida\assets\favicon.ico" />
     <Content Include="Vista\Pantalla_Dividida\assets\img\cf14991f-7f0a-47f2-b7aa-d7e223cad97c_512x512.jpg" />
     <Content Include="Vista\Pantalla_Dividida\assets\img\close-icon.svg" />
@@ -495,6 +496,13 @@
     </Compile>
     <Compile Include="Vista\Mosaico\mas_Info.aspx.designer.cs">
       <DependentUpon>mas_Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Pantalla_Dividida\AdminPantallaDividida.aspx.cs">
+      <DependentUpon>AdminPantallaDividida.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Pantalla_Dividida\AdminPantallaDividida.aspx.designer.cs">
+      <DependentUpon>AdminPantallaDividida.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Pantalla_Dividida\index_PantallaDiv.aspx.cs">
       <DependentUpon>index_PantallaDiv.aspx</DependentUpon>
