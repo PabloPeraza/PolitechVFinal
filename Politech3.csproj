@@ -1,0 +1,612 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{39A56E7F-1490-4B99-909C-BFCFD0FA8B1E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Politech3</RootNamespace>
+    <AssemblyName>Politech3</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44352</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="StreamJsonRpc, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.6.0.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Vista\Bloques\administradorBloques.aspx" />
+    <Content Include="Vista\Bloques\assets\css\fontawesome-all.min.css" />
+    <Content Include="Vista\Bloques\assets\css\images\intro.svg" />
+    <Content Include="Vista\Bloques\assets\css\main.css" />
+    <Content Include="Vista\Bloques\assets\css\noscript.css" />
+    <Content Include="Vista\Bloques\assets\js\breakpoints.min.js" />
+    <Content Include="Vista\Bloques\assets\js\browser.min.js" />
+    <Content Include="Vista\Bloques\assets\js\jquery.min.js" />
+    <Content Include="Vista\Bloques\assets\js\jquery.scrollex.min.js" />
+    <Content Include="Vista\Bloques\assets\js\jquery.scrolly.min.js" />
+    <Content Include="Vista\Bloques\assets\js\main.js" />
+    <Content Include="Vista\Bloques\assets\js\util.js" />
+    <Content Include="Vista\Bloques\images\cf14991f-7f0a-47f2-b7aa-d7e223cad97c_512x512.jpg" />
+    <Content Include="Vista\Bloques\images\favi.ico" />
+    <Content Include="Vista\Bloques\images\favicon.png" />
+    <Content Include="Vista\Bloques\images\pic00.png" />
+    <Content Include="Vista\Bloques\images\pic000.jpg" />
+    <Content Include="Vista\Bloques\images\pic01.png" />
+    <Content Include="Vista\Bloques\images\pic02.png" />
+    <Content Include="Vista\Bloques\images\pic03.png" />
+    <Content Include="Vista\Bloques\images\pic04.png" />
+    <Content Include="Vista\Bloques\images\pic05.png" />
+    <Content Include="Vista\Bloques\images\pic06.png" />
+    <Content Include="Vista\Bloques\images\pic07.png" />
+    <Content Include="Vista\Bloques\images\pic08.png" />
+    <Content Include="Vista\Bloques\images\pic09.png" />
+    <Content Include="Vista\Bloques\images\pic10.png" />
+    <Content Include="Vista\Bloques\images\pic11.png" />
+    <Content Include="Vista\Bloques\images\pic12.png" />
+    <Content Include="Vista\Bloques\images\pic13.png" />
+    <Content Include="Vista\Bloques\images\pic14.png" />
+    <Content Include="Vista\Bloques\images\pic15.png" />
+    <Content Include="Vista\Bloques\images\pic16.png" />
+    <Content Include="Vista\Bloques\images\pic17.png" />
+    <Content Include="Vista\Bloques\images\pic18.png" />
+    <Content Include="Vista\Bloques\images\pic19.png" />
+    <Content Include="Vista\Bloques\images\pic20.png" />
+    <Content Include="Vista\Bloques\images\pic21.png" />
+    <Content Include="Vista\Bloques\images\pic22.png" />
+    <Content Include="Vista\Bloques\images\pic23.png" />
+    <Content Include="Vista\Bloques\images\pic24.png" />
+    <Content Include="Vista\Bloques\images\pic25.png" />
+    <Content Include="Vista\Bloques\images\pic26.png" />
+    <Content Include="Vista\Bloques\images\pic27.png" />
+    <Content Include="Vista\Bloques\images\pic28.png" />
+    <Content Include="Vista\Bloques\images\pic29.png" />
+    <Content Include="Vista\Bloques\images\pic30.png" />
+    <Content Include="Vista\Bloques\images\wall.jpg" />
+    <Content Include="Vista\Bloques\IndexBloques.aspx" />
+    <Content Include="Vista\Bloques\Log-In Bloques.aspx" />
+    <Content Include="Vista\Bloques\MasInfo.aspx" />
+    <Content Include="Vista\Main\assets\css\style.css" />
+    <Content Include="Vista\Main\assets\img\about.jpg" />
+    <Content Include="Vista\Main\assets\img\apple-touch-icon.png" />
+    <Content Include="Vista\Main\assets\img\blog\blog-1.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\blog-2.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\blog-3.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\blog-4.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\blog-author.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\blog-inside-post.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\blog-recent-1.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\blog-recent-2.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\blog-recent-3.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\blog-recent-4.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\blog-recent-5.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\comments-1.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\comments-2.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\comments-3.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\comments-4.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\comments-5.jpg" />
+    <Content Include="Vista\Main\assets\img\blog\comments-6.jpg" />
+    <Content Include="Vista\Main\assets\img\Bloque.png" />
+    <Content Include="Vista\Main\assets\img\clients\client-1.png" />
+    <Content Include="Vista\Main\assets\img\clients\client-2.png" />
+    <Content Include="Vista\Main\assets\img\clients\client-3.png" />
+    <Content Include="Vista\Main\assets\img\clients\client-4.png" />
+    <Content Include="Vista\Main\assets\img\clients\client-5.png" />
+    <Content Include="Vista\Main\assets\img\clients\client-6.png" />
+    <Content Include="Vista\Main\assets\img\clients\client-7.png" />
+    <Content Include="Vista\Main\assets\img\clients\client-8.png" />
+    <Content Include="Vista\Main\assets\img\favicon.png" />
+    <Content Include="Vista\Main\assets\img\Mosaico.png" />
+    <Content Include="Vista\Main\assets\img\PantDivididaIndex.PNG" />
+    <Content Include="Vista\Main\assets\img\pic00.png" />
+    <Content Include="Vista\Main\assets\img\portfolio\portfolio-1.jpg" />
+    <Content Include="Vista\Main\assets\img\portfolio\portfolio-2.jpg" />
+    <Content Include="Vista\Main\assets\img\portfolio\portfolio-3.jpg" />
+    <Content Include="Vista\Main\assets\img\portfolio\portfolio-4.jpg" />
+    <Content Include="Vista\Main\assets\img\portfolio\portfolio-5.jpg" />
+    <Content Include="Vista\Main\assets\img\portfolio\portfolio-6.jpg" />
+    <Content Include="Vista\Main\assets\img\portfolio\portfolio-7.jpg" />
+    <Content Include="Vista\Main\assets\img\portfolio\portfolio-8.jpg" />
+    <Content Include="Vista\Main\assets\img\portfolio\portfolio-9.jpg" />
+    <Content Include="Vista\Main\assets\img\skills-img.jpg" />
+    <Content Include="Vista\Main\assets\img\slide\slide-1.jpg" />
+    <Content Include="Vista\Main\assets\img\slide\slide-2.jpg" />
+    <Content Include="Vista\Main\assets\img\slide\slide-3.jpg" />
+    <Content Include="Vista\Main\assets\img\team\team-1.jpg" />
+    <Content Include="Vista\Main\assets\img\team\team-2.jpg" />
+    <Content Include="Vista\Main\assets\img\team\team-3.jpg" />
+    <Content Include="Vista\Main\assets\img\testimonials\testimonials-1.jpg" />
+    <Content Include="Vista\Main\assets\img\testimonials\testimonials-2.jpg" />
+    <Content Include="Vista\Main\assets\img\testimonials\testimonials-3.jpg" />
+    <Content Include="Vista\Main\assets\img\testimonials\testimonials-4.jpg" />
+    <Content Include="Vista\Main\assets\img\testimonials\testimonials-5.jpg" />
+    <Content Include="Vista\Main\assets\img\testimonials\testimonials-6.jpg" />
+    <Content Include="Vista\Main\assets\js\main.js" />
+    <Content Include="Vista\Main\assets\vendor\animate.css\animate.compat.css" />
+    <Content Include="Vista\Main\assets\vendor\animate.css\animate.css" />
+    <Content Include="Vista\Main\assets\vendor\animate.css\animate.min.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap-icons\bootstrap-icons.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap-icons\index.html" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Vista\Main\assets\vendor\boxicons\css\animations.css" />
+    <Content Include="Vista\Main\assets\vendor\boxicons\css\boxicons.css" />
+    <Content Include="Vista\Main\assets\vendor\boxicons\css\boxicons.min.css" />
+    <Content Include="Vista\Main\assets\vendor\boxicons\css\transformations.css" />
+    <Content Include="Vista\Main\assets\vendor\boxicons\fonts\boxicons.svg" />
+    <Content Include="Vista\Main\assets\vendor\glightbox\css\glightbox.css" />
+    <Content Include="Vista\Main\assets\vendor\glightbox\css\glightbox.min.css" />
+    <Content Include="Vista\Main\assets\vendor\glightbox\js\glightbox.js" />
+    <Content Include="Vista\Main\assets\vendor\glightbox\js\glightbox.min.js" />
+    <Content Include="Vista\Main\assets\vendor\isotope-layout\isotope.pkgd.js" />
+    <Content Include="Vista\Main\assets\vendor\isotope-layout\isotope.pkgd.min.js" />
+    <Content Include="Vista\Main\assets\vendor\php-email-form\validate.js" />
+    <Content Include="Vista\Main\assets\vendor\purecounter\purecounter.js" />
+    <Content Include="Vista\Main\assets\vendor\swiper\swiper-bundle.min.css" />
+    <Content Include="Vista\Main\assets\vendor\swiper\swiper-bundle.min.js" />
+    <Content Include="Vista\Main\assets\vendor\waypoints\noframework.waypoints.js" />
+    <Content Include="Vista\Main\ContactMain.aspx" />
+    <Content Include="Vista\Main\forms\contact.php" />
+    <Content Include="Vista\Main\forms\Readme.txt" />
+    <Content Include="Vista\Main\index.aspx" />
+    <Content Include="Vista\Main\servicios.aspx" />
+    <Content Include="Vista\Mosaico\AdminMosaico.aspx" />
+    <Content Include="Vista\Mosaico\assets\bootstrap-icons\bootstrap-icons.css" />
+    <Content Include="Vista\Mosaico\assets\bootstrap-icons\index.html" />
+    <Content Include="Vista\Mosaico\assets\css\fontawesome-all.min.css" />
+    <Content Include="Vista\Mosaico\assets\css\main.css" />
+    <Content Include="Vista\Mosaico\assets\css\noscript.css" />
+    <Content Include="Vista\Mosaico\assets\css\Style_Log.css" />
+    <Content Include="Vista\Mosaico\assets\js\breakpoints.min.js" />
+    <Content Include="Vista\Mosaico\assets\js\browser.min.js" />
+    <Content Include="Vista\Mosaico\assets\js\jquery.min.js" />
+    <Content Include="Vista\Mosaico\assets\js\main.js" />
+    <Content Include="Vista\Mosaico\assets\js\util.js" />
+    <Content Include="Vista\Mosaico\assets\pic00.png" />
+    <Content Include="Vista\Mosaico\images\arrow.png" />
+    <Content Include="Vista\Mosaico\images\cf14991f-7f0a-47f2-b7aa-d7e223cad97c_512x512.jpg" />
+    <Content Include="Vista\Mosaico\images\favi.ico" />
+    <Content Include="Vista\Mosaico\images\favicon.png" />
+    <Content Include="Vista\Mosaico\images\logo.svg" />
+    <Content Include="Vista\Mosaico\images\pic00.png" />
+    <Content Include="Vista\Mosaico\images\pic000.jpg" />
+    <Content Include="Vista\Mosaico\images\pic01.png" />
+    <Content Include="Vista\Mosaico\images\pic02.png" />
+    <Content Include="Vista\Mosaico\images\pic03.png" />
+    <Content Include="Vista\Mosaico\images\pic04.png" />
+    <Content Include="Vista\Mosaico\images\pic05.png" />
+    <Content Include="Vista\Mosaico\images\pic06.png" />
+    <Content Include="Vista\Mosaico\images\pic07.png" />
+    <Content Include="Vista\Mosaico\images\pic08.png" />
+    <Content Include="Vista\Mosaico\images\pic09.png" />
+    <Content Include="Vista\Mosaico\images\pic10.png" />
+    <Content Include="Vista\Mosaico\images\pic11.png" />
+    <Content Include="Vista\Mosaico\images\pic12.png" />
+    <Content Include="Vista\Mosaico\images\pic13.png" />
+    <Content Include="Vista\Mosaico\images\pic14.png" />
+    <Content Include="Vista\Mosaico\images\pic15.png" />
+    <Content Include="Vista\Mosaico\images\pic16.png" />
+    <Content Include="Vista\Mosaico\images\pic17.png" />
+    <Content Include="Vista\Mosaico\images\pic18.png" />
+    <Content Include="Vista\Mosaico\images\pic19.png" />
+    <Content Include="Vista\Mosaico\images\pic20.png" />
+    <Content Include="Vista\Mosaico\images\pic21.png" />
+    <Content Include="Vista\Mosaico\images\pic22.png" />
+    <Content Include="Vista\Mosaico\images\pic23.png" />
+    <Content Include="Vista\Mosaico\images\pic24.png" />
+    <Content Include="Vista\Mosaico\images\pic25.png" />
+    <Content Include="Vista\Mosaico\images\pic26.png" />
+    <Content Include="Vista\Mosaico\images\pic27.png" />
+    <Content Include="Vista\Mosaico\images\pic28.png" />
+    <Content Include="Vista\Mosaico\images\pic29.png" />
+    <Content Include="Vista\Mosaico\images\pic30.png" />
+    <Content Include="Vista\Mosaico\images\wall.jpg" />
+    <Content Include="Vista\Mosaico\index_Mosaico.aspx" />
+    <Content Include="Vista\Mosaico\log-in_Mosaico.aspx" />
+    <Content Include="Vista\Mosaico\mas_Info.aspx" />
+    <Content Include="Vista\Pantalla_Dividida\assets\favicon.ico" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\cf14991f-7f0a-47f2-b7aa-d7e223cad97c_512x512.jpg" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\close-icon.svg" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\favi.ico" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\favicon.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\header-bg.jpg" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\logos\asus.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\logos\EVGA.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\logos\Huawei-logotipo.jpg" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\logos\HyperX-logo.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\logos\intel.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\logos\Logitech.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\logos\MSI-Logo.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\logos\NZXT.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\logos\OBSBOT_Logo.jpg" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\logos\status_logo.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\logos\Steelseries-logo.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\logos\Team_Group.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\logos\zotac.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\map-image.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\navbar-logo.svg" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic00.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic000.jpg" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic001.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic01.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic02.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic03.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic04.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic05.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic06.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic07.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic08.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic09.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic10.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic11.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic12.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic13.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic14.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic15.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic16.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic17.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic18.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic19.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic20.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic21.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic22.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic23.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic24.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic25.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic26.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic27.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic28.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic29.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\pic30.png" />
+    <Content Include="Vista\Pantalla_Dividida\assets\img\wall.jpg" />
+    <Content Include="Vista\Pantalla_Dividida\css\styles.css" />
+    <Content Include="Vista\Pantalla_Dividida\css\style_Log.css" />
+    <Content Include="Vista\Pantalla_Dividida\index_PantallaDiv.aspx" />
+    <Content Include="Vista\Pantalla_Dividida\js\scripts.js" />
+    <Content Include="Vista\Pantalla_Dividida\LogInPantallaDiv.aspx" />
+    <Content Include="Vista\Pantalla_Dividida\serviciosPantallaDiv.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Login.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Producto.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicios.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Bloques\administradorBloques.aspx.cs">
+      <DependentUpon>administradorBloques.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Bloques\administradorBloques.aspx.designer.cs">
+      <DependentUpon>administradorBloques.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Bloques\IndexBloques.aspx.cs">
+      <DependentUpon>IndexBloques.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Bloques\IndexBloques.aspx.designer.cs">
+      <DependentUpon>IndexBloques.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Bloques\Log-In Bloques.aspx.cs">
+      <DependentUpon>Log-In Bloques.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Bloques\Log-In Bloques.aspx.designer.cs">
+      <DependentUpon>Log-In Bloques.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Bloques\MasInfo.aspx.cs">
+      <DependentUpon>MasInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Bloques\MasInfo.aspx.designer.cs">
+      <DependentUpon>MasInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Main\ContactMain.aspx.cs">
+      <DependentUpon>ContactMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Main\ContactMain.aspx.designer.cs">
+      <DependentUpon>ContactMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Main\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Main\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Main\servicios.aspx.cs">
+      <DependentUpon>servicios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Main\servicios.aspx.designer.cs">
+      <DependentUpon>servicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Mosaico\AdminMosaico.aspx.cs">
+      <DependentUpon>AdminMosaico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Mosaico\AdminMosaico.aspx.designer.cs">
+      <DependentUpon>AdminMosaico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Mosaico\index_Mosaico.aspx.cs">
+      <DependentUpon>index_Mosaico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Mosaico\index_Mosaico.aspx.designer.cs">
+      <DependentUpon>index_Mosaico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Mosaico\log-in_Mosaico.aspx.cs">
+      <DependentUpon>log-in_Mosaico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Mosaico\log-in_Mosaico.aspx.designer.cs">
+      <DependentUpon>log-in_Mosaico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Mosaico\mas_Info.aspx.cs">
+      <DependentUpon>mas_Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Mosaico\mas_Info.aspx.designer.cs">
+      <DependentUpon>mas_Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Pantalla_Dividida\index_PantallaDiv.aspx.cs">
+      <DependentUpon>index_PantallaDiv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Pantalla_Dividida\index_PantallaDiv.aspx.designer.cs">
+      <DependentUpon>index_PantallaDiv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Pantalla_Dividida\LogInPantallaDiv.aspx.cs">
+      <DependentUpon>LogInPantallaDiv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Pantalla_Dividida\LogInPantallaDiv.aspx.designer.cs">
+      <DependentUpon>LogInPantallaDiv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Pantalla_Dividida\serviciosPantallaDiv.aspx.cs">
+      <DependentUpon>serviciosPantallaDiv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Pantalla_Dividida\serviciosPantallaDiv.aspx.designer.cs">
+      <DependentUpon>serviciosPantallaDiv.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap-icons\bootstrap-icons.json" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap-icons\fonts\bootstrap-icons.woff" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap-icons\fonts\bootstrap-icons.woff2" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Vista\Main\assets\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Vista\Main\assets\vendor\boxicons\fonts\boxicons.eot" />
+    <Content Include="Vista\Main\assets\vendor\boxicons\fonts\boxicons.ttf" />
+    <Content Include="Vista\Main\assets\vendor\boxicons\fonts\boxicons.woff" />
+    <Content Include="Vista\Main\assets\vendor\boxicons\fonts\boxicons.woff2" />
+    <Content Include="Vista\Mosaico\assets\bootstrap-icons\bootstrap-icons.json" />
+    <Content Include="Vista\Mosaico\assets\bootstrap-icons\fonts\bootstrap-icons.woff" />
+    <Content Include="Vista\Mosaico\assets\bootstrap-icons\fonts\bootstrap-icons.woff2" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56117</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44352/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\System.Text.Json.6.0.2\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Text.Json.6.0.2\build\System.Text.Json.targets'))" />
+  </Target>
+  <Import Project="packages\System.Text.Json.6.0.2\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.6.0.2\build\System.Text.Json.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
