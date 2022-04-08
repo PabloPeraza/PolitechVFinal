@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" async="true" AutoEventWireup="true" CodeBehind="index_Mosaico.aspx.cs" Inherits="Politech3.Vista.Mosaico.index_Mosaico" %>
 
+
  <!DOCTYPE html>
 
 <html>
@@ -13,6 +14,8 @@
         <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
     <link href="assets/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+
 </head>
 <form runat="server">
 
@@ -47,6 +50,7 @@
                 <ul>
                     <li><a href="../Main/index.aspx">Patrones</a></li>
                     <li><a href="index_Mosaico.aspx">Home</a></li>
+                <li><a href="../Mosaico/Servicios.aspx">Servicios</a></li>
                     <li><a href="log-in_Mosaico.aspx">Administrador</a></li>
 
                 </ul>

@@ -1,6 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index_PantallaDiv.aspx.cs" Inherits="Politech3.Vista.Pantalla_Dividida.index_PantallaDiv" %>
 
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -31,7 +30,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#page-top">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="serviciosPantallaDiv.aspx">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
                         
                         <li class="nav-item"><a class="nav-link" href="#about">Catalogo</a></li>
                         <li class="nav-item"><a class="nav-link" href="LogInPantallaDiv.aspx">Log-in</a></li>
@@ -46,10 +45,10 @@
             
         </header>
         <!-- Services-->
-        <section class="page-section" id="services">
+        <section >
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Servicios</h2>
+                    
                     <h3 class="section-subheading text-muted">Contamos con diferentes servicios, como lo son:.</h3>
                 </div>
                 <div class="row text-center">
@@ -245,6 +244,121 @@
                 </div>
             </div>
         </div>
+
+                <!--------Servicios--------->
+
+        <section class="page-section" id="services"">
+    <div class="top"></div>
+    <div class="container">
+      <!-- ***** Section Title Start ***** -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="center-heading">
+            <h2 class="section-title">Servicios</h2>
+          </div>
+        </div>
+        
+      </div>
+      <!-- ***** Section Title End ***** -->
+
+      <div class="row">
+        <!-- ***** Pricing Item Start ***** -->
+        <div class="col-lg-4 col-md-6">
+          <div class="pricing-item">
+            <div class="pricing-header">
+              <h3 class="pricing-title">Paquete 1</h3>
+            </div>
+            <div class="pricing-body">
+              <div class="price-wrapper">
+                <span class="currency">$</span>
+                <span class="price">350</span>
+                <span class="period">/Por equipo.</span>
+              </div>
+              <ul class="list">
+                <li class="active">Incorporar los servisios de respaldo.</li>
+                <li class="active">Formateo.</li>
+                <li class="active">Reinstalación (sistema operativo).</li>
+                <li class="active">Instalación de toda la paquetería que el cliente solicite.</li>
+                <li>-</li>
+                <li>-</li>
+                <li>-</li>
+                <li>-</li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <a  class="btn-primary-line">Select Plan</a>
+            </div>
+          </div>
+        </div>
+        <!-- ***** Pricing Item End ***** -->
+
+        <!-- ***** Pricing Item Start ***** -->
+        <div class="col-lg-4 col-md-6">
+          <div class="pricing-item active">
+            <div class="pricing-header">
+              <h3 class="pricing-title">Paquete 2</h3>
+            </div>
+            <div class="pricing-body">
+              <div class="price-wrapper">
+                <span class="currency">$</span>
+                <span class="price">320</span>
+                <span class="period">/Por equipo.</span>
+              </div>
+              <ul class="list">
+                <li class="active">Instalación de cualquier tipo de software: </li>
+                <li class="active"> -Antivirus.</li>
+                <li class="active"> -Paqueterías.</li>
+                <li class="active"> -Sistemas operativos.</li>
+                <li class="active"> -Configuración de los mismos.</li>
+                <li class="active">Cambio de piezas y aumento de hardware</li>
+                <li>-</li>
+                <li>-</li>
+                <li>-</li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <a  class="btn-primary-line">Select Plan</a>
+            </div>
+          </div>
+        </div>
+        <!-- ***** Pricing Item End ***** -->
+
+        <!-- ***** Pricing Item Start ***** -->
+        <div class="col-lg-4 col-md-6">
+          <div class="pricing-item">
+            <div class="pricing-header">
+              <h3 class="pricing-title">Paquete 3</h3>
+            </div>
+            <div class="pricing-body">
+              <div class="price-wrapper">
+                <span class="currency">$</span>
+                <span class="price">250</span>
+                <span class="period">Mensual por equipo</span>
+              </div>
+              <ul class="list">
+                <li class="active">Soporte técnico en sitio y vía remota.</li>
+                <li class="active">Restauración e instalación de sistema operativo y aplicaciones.</li>
+                <li class="active">Eliminación de virus.</li>
+                <li class="active">Activación de PC e impresoras en red.</li>
+                <li class="active">Soporte técnico en aplicaciones comerciales.</li>
+                <li class="active">Recuperación deinformación de discos duros.</li>
+                <li class="active">Migración y actualización de software y hardware.</li>
+                <li class="active">Asesoría telefónica al cliente.</li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <a <%--href="#"--%> class="btn-primary-line">Select Plan</a>
+            </div>
+          </div>
+        </div>
+        <!-- ***** Pricing Item End ***** -->
+      </div>
+    </div>
+  </section>
+
+        <!--Fin Servicios-->
+
+
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container">

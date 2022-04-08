@@ -14,20 +14,20 @@ namespace Politech3.Vista.Mosaico
 {
     public partial class index_Mosaico : System.Web.UI.Page
     {
-        protected async void Page_Load(object sender, EventArgs e)
-        {
-            string respuesta = await GetCatalogo();
-            List<Productos> ListaProductos = JsonConvert.DeserializeObject<List<Productos>>(respuesta);
-            LlenadoDeInformacion(ListaProductos);
-        }
+        //protected async void Page_Load(object sender, EventArgs e)
+        //{
+        //    string respuesta = await GetCatalogo();
+        //    List<Productos> ListaProductos = JsonConvert.DeserializeObject<List<Productos>>(respuesta);
+        //    LlenadoDeInformacion(ListaProductos);
+        //}
 
-        private async Task<string> GetCatalogo()
-        {
-            WebRequest oRequest = WebRequest.Create("http://192.168.25.60/Politech/api/Producto");
-            WebResponse oResponse = oRequest.GetResponse();
-            StreamReader sr = new StreamReader(oResponse.GetResponseStream());
-            return await sr.ReadToEndAsync();
-        }
+        ////private async Task<string> GetCatalogo()
+        ////{
+        ////    WebRequest oRequest = WebRequest.Create("http://192.168.25.60/Politech/api/Producto");
+        ////    WebResponse oResponse = oRequest.GetResponse();
+        ////    StreamReader sr = new StreamReader(oResponse.GetResponseStream());
+        ////    return await sr.ReadToEndAsync();
+        ////}
 
         public class Productos
         {
