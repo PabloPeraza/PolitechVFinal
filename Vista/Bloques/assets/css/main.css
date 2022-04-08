@@ -36,7 +36,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
-
+.button1{
+	padding:10px;
+	display:inline-block;
+}
 
 ol, ul {
 	list-style: none;
@@ -1855,8 +1858,8 @@ input, select, textarea {
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
-    top: -4px;
-    left: 135px;
+    top: 1px;
+    left: 650px;
     margin-bottom: 0px;
     border-left-style: solid !important;
     border-left-color: inherit !important;
@@ -2393,6 +2396,7 @@ input, select, textarea {
 	select {
 		margin-left: 204px;
     margin-right: 0px;
+    margin-top: 0px;
 }
 
 	textarea {

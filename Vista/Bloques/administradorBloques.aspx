@@ -11,7 +11,10 @@
 				margin-right:auto;
 				margin-bottom:auto; 
 			}
-			
+		label {
+  display: inline-block;
+  text-align: right;
+}​
 		
 		</style>
 		<title>Poli-Tech  Administrador Bloques</title>
@@ -41,12 +44,11 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 		 
-	    <div style="margin-left:75px; margin-right:auto">
-		<asp:TextBox ID="TextBox1" runat="server" BorderStyle="Inset" Width="995px">Matricula</asp:TextBox>
-			<asp:Button ID="Button1" runat="server" Text="Buscar" />
-            <asp:Button ID="Button3" runat="server" Text="Button" />
+	    <div style="margin-left:75px; margin-right:auto; padding:10px; align-content">
+		<asp:TextBox ID="Buscar" runat="server" BorderStyle="Inset" Width="995px"   >Matricula</asp:TextBox>
+			<asp:Button ID="Button1" runat="server" Text="Buscar" CssClass="button1"/>
         </div>
-
+			
 		<div>
 		  <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None" Height="86px" Width="984px" CssClass="grid">
             <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
@@ -62,19 +64,52 @@
 
 		</div>
 	  
-		<div style="margin-left:75px"><!--Apartado de altas  La idea es manejar cuantos textbox se necesiten para llenar un registro en la base de datos, y el boton se encarga de mandar la info a la base de datos-->
-			<asp:TextBox ID="ID" runat="server" Width="410px"></asp:TextBox>
-			<asp:TextBox ID="TextBox2" runat="server" Width="410px"></asp:TextBox>
-			<asp:TextBox ID="TextBox3" runat="server" Width="410px"></asp:TextBox>
+		<div style="margin-left:285px;margin-right:auto><!--Apartado de altas  La idea es manejar cuantos textbox se necesiten para llenar un registro en la base de datos, y el boton se encarga de mandar la info a la base de datos-->
+			<label style="padding-left:15px; padding:inherit">ID_Producto<asp:TextBox ID="ID" runat="server" Width="410px" ></asp:TextBox>
+			</label>
+			
+			<label>Nombre <asp:TextBox ID="NombreProducto" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Marca <asp:TextBox ID="MarcaDeProducto" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Modelo <asp:TextBox ID="ModeloProducto" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Unidad <asp:TextBox ID="UnidadesDelProducto" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Precio <asp:TextBox ID="PrecioDeProducto" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Descripcion Breve <asp:TextBox ID="DescBreveProducto" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Descripcion <asp:TextBox ID="DescripcionProducto" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Caracteristica1 <asp:TextBox ID="Caracteristica1" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Caracteristica2 <asp:TextBox ID="Caracteristica2" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Caracteristica3 <asp:TextBox ID="Caracteristica3" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Caracteristica4 <asp:TextBox ID="Caracteristica4" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Caracteristica5 <asp:TextBox ID="Caracteristica5" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Imagen <asp:TextBox ID="ImagenProducto" runat="server" Width="410px"></asp:TextBox></label>
+
 			<asp:Button ID="Button4" runat="server" Text="Alta" />
 		</div>
+		<div style="margin-left:75px></div>
 
-		<div style="margin-left:75px"><!--Apartado de modificaciones -->
+		<div style="margin-left:285px><!--Apartado de modificaciones -->
+						<label>Nombre <asp:TextBox ID="TextBox1" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Apartado para Modificar</label>
+			<label>Modificar<asp:TextBox ID="BuscarModificar" runat="server" Width="915px"></asp:TextBox>	</label>		
+			<label>Nombre <asp:TextBox ID="ModNombre" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Marca <asp:TextBox ID="ModMarca" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Modelo <asp:TextBox ID="ModModelo" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Unidad <asp:TextBox ID="ModUnidades" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Precio <asp:TextBox ID="ModPrecio" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Descripcion Breve <asp:TextBox ID="DescripcionBreveModificar" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Descripcion <asp:TextBox ID="DescripcionModificar" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Caracteristica1 <asp:TextBox ID="Caracteristica1Mod" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Caracteristica2 <asp:TextBox ID="Caracteristica2Mod" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Caracteristica3 <asp:TextBox ID="Caracteristica3Mod" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Caracteristica4 <asp:TextBox ID="Caracteristica4Mod" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Caracteristica5 <asp:TextBox ID="Caracteristica5Mod" runat="server" Width="410px"></asp:TextBox></label>
+			<label>Imagen <asp:TextBox ID="ImagenMod" runat="server" Width="410px"></asp:TextBox></label>
+				<asp:Button ID="ModificarProducto" runat="server" Text="Modificar" />
 
 		</div>
-
-		<div style="margin-left:75px"><!--Apartado de bajas -->
-
+		
+		<div style="margin-left:75px; margin-right:auto"><!--Apartado de bajas -->
+				<asp:TextBox ID="BuscadorBajas" runat="server" BorderStyle="Inset" Width="995px"  >Matricula</asp:TextBox>
+				<asp:Button ID="Modificar" runat="server" Text="Eliminar" />
 		</div>
 
 		<div > <!--Div Botones -->
